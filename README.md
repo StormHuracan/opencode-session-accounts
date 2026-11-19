@@ -2,29 +2,15 @@
 
 Use different ChatGPT subscriptions in different OpenCode Desktop chats. For example, pin your work account to one chat and your personal account to another. Each chat remembers its selection when you reopen OpenCode.
 
-## Install
+## Install on Windows, macOS, or Linux
 
-You’ll need OpenCode Desktop and CLI 2.3.2, Node.js with npm, and ChatGPT accounts connected in OpenCode under **Settings → Providers → OpenAI → Sign in with ChatGPT**.
+With OpenCode Desktop and CLI 2.3.2 installed, run this command in PowerShell on Windows or in your terminal on macOS or Linux:
 
-From a directory of your choice, clone and build the plugin:
-
-```sh
-git clone https://github.com/StormHuracan/opencode-session-accounts.git
-cd opencode-session-accounts
-npm ci
-npm run build
+```text
+opencode plugin add github:StormHuracan/opencode-session-accounts
 ```
 
-On macOS or Linux, link the checkout into [OpenCode’s global plugin directory](https://opencode.ai/docs/plugins/#discover):
-
-```sh
-plugin_dir="${XDG_CONFIG_HOME:-$HOME/.config}/opencode/plugins"
-mkdir -p "$plugin_dir"
-ln -s "$(pwd -P)" "$plugin_dir/"
-opencode service restart
-```
-
-Reopen OpenCode Desktop.
+Reopen OpenCode Desktop. To connect a ChatGPT account, go to **Settings → Providers → OpenAI → Sign in with ChatGPT**.
 
 ## Use
 
