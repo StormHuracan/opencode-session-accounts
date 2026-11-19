@@ -11,9 +11,9 @@
     "./gui-experimental": "./dist/gui-experimental.cjs"
   },
   "scripts": {
-    "build": "vite build",
     "test": "node --test test/*.test.js",
-    "check": "npm run test"
+    "check": "npm run test",
+    "build:gui": "vite build"
   },
   "dependencies": {
     "@opencode/plugin": "^2.2.0"
@@ -23,5 +23,10 @@
     "vite": "^7.0.0",
     "vite-plugin-solid": "^2.11.0"
   },
-  "files": ["src", "dist", "README.md", "LICENSE"]
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
 }
