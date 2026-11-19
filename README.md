@@ -6,25 +6,25 @@ Use different ChatGPT subscriptions in different OpenCode Desktop chats. For exa
 
 You’ll need OpenCode Desktop and CLI 2.3.2, Node.js with npm, and ChatGPT accounts connected in OpenCode under **Settings → Providers → OpenAI → Sign in with ChatGPT**.
 
+From a directory of your choice, clone and build the plugin:
+
 ```sh
-mkdir -p ~/Projects
-cd ~/Projects
 git clone https://github.com/StormHuracan/opencode-session-accounts.git
 cd opencode-session-accounts
 npm ci
 npm run build
-pwd
 ```
 
-Add the absolute path printed by `pwd` to the `plugins` array in `~/.config/opencode/opencode.jsonc`. Keep any entries already in that array.
+On macOS or Linux, link the checkout into [OpenCode’s global plugin directory](https://opencode.ai/docs/plugins/#discover):
 
-```jsonc
-{
-  "plugins": ["/Users/YOUR_USERNAME/Projects/opencode-session-accounts"]
-}
+```sh
+plugin_dir="${XDG_CONFIG_HOME:-$HOME/.config}/opencode/plugins"
+mkdir -p "$plugin_dir"
+ln -s "$(pwd -P)" "$plugin_dir/"
+opencode service restart
 ```
 
-Run `opencode service restart`, then reopen OpenCode Desktop.
+Reopen OpenCode Desktop.
 
 ## Use
 
