@@ -1,0 +1,27 @@
+{
+  "name": "opencode-session-accounts",
+  "version": "0.3.1",
+  "description": "Pin an OpenAI/Codex subscription to each OpenCode Desktop session without global account switching.",
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "exports": {
+    ".": "./src/index.js",
+    "./rpc": "./src/rpc.js",
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "node --test test/*.test.js",
+    "check": "npm run test"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.2.0"
+  },
+  "devDependencies": {
+    "solid-js": "^1.9.0",
+    "vite": "^7.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  },
+  "files": ["src", "dist", "README.md", "LICENSE"]
+}
